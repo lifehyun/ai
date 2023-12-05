@@ -84,18 +84,18 @@ public class Calculator {
 	  
 	    //50만원 변수에 담는다
 	    int sum1 = 10 * basicPay;
+	   // int sum2 = 15 * basicpay2;
+	    
 	   
 	    //세금을 계산한다.
 	    //int texCal    = sum1 * tex; // 50000*0.03
 	    double texCal = sum1 * tex;
 	    
 	    //실수력액을 계산한다.
-	    
 	    double salary = sum1 - texCal; //정수형 - 실수형
 	    
-	    System.out.println("홍길동" + sum1 + " " +texCal + " " + salary );
-
-	 
+	    System.out.println( sum1 + " " +texCal + " " + salary );
+	   // System.out.println(sum2 + "  "+ texcal2 + "  "+ salary);
 	    
 	    
 	}

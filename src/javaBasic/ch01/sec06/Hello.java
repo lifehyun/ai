@@ -10,8 +10,8 @@ public class Hello {
 
 	public static void sum () { 
 		//합계담당 메소드
-		int[] score = {1,2,3}; //배열
-		Box stringbox = new Box<String>();// <> 제네릭
+//		int[] score = {1,2,3}; //배열
+//		Box stringbox = new Box<String>();// <> 제네릭
 	}
 /*	
 	public static void average() {
