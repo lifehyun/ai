@@ -1,0 +1,25 @@
+package javaBasic.ch03.sec01;
+
+public class 변수복습 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String vehicleName = "싼타페";				//차량명
+		int totalvehicleamount = 35000000;			//차량총액
+		int delivermoney = 15000000; 				//인도금
+		int installmentprincipal = 20000000;		//할부원금
+		int repaymentperiod = 36;					//상환기간(월)
+		int monthlypatment = 55555556;				//월납임금
+		
+	
+		
+		String vehicleName1 = "코란도";
+		int totalvehicleamount1 = 24000000;
+		int delivermoney1 = 5000000; 
+		int installmentprincipal1 = 19000000;
+		int repaymentperiod1 = 24;
+		int monthlypatment1 = 79166667;
+		
+	}
+
+}

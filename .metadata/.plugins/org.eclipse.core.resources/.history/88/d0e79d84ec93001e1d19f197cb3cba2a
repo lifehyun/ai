@@ -1,0 +1,47 @@
+package javaBasic.ch04.sec02;
+
+import java.util.Scanner;
+
+public class 점수확인표 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("어떤학생입니까");
+		System.out.println("선택하세요");
+		String menu = sc.nextLine();
+		
+	String name = "홍길동";
+	int score = 100;
+	
+	
+			
+		
+		
+	while(!menu.equals("4")) {
+		System.out.println("----------------------");
+		System.out.println("1.학생명|2.점수|3.출력|4종료");
+		System.out.println("----------------------");
+		System.out.println("선택");
+		menu = sc.nextLine();
+		
+	switch(menu) {
+	case "1":System.out.println("학생명");
+		 sc.nextLine();
+		 break;
+	case "2":System.out.println("점수");
+	case "3":System.out.println("출력");
+	case "4":System.out.println("종료");
+	default: System.out.println("메뉴를 잘못 누르셧어요 다시");
+	}
+		
+		
+		
+	}
+		
+		
+		
+		
+
+	}
+
+}

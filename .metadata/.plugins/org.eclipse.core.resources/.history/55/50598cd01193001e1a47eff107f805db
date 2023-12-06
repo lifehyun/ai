@@ -1,0 +1,17 @@
+package javaBasic.ch03.sec02;
+
+import java.util.Scanner;
+
+public class 산술연산자 {
+
+	public static vold main(String[]args) {
+	
+	Scanner sc = new Scanner(system.in);
+	int kor = sc.nextInt();
+		
+			
+			System.out.println(kor);
+			
+			
+	}
+}

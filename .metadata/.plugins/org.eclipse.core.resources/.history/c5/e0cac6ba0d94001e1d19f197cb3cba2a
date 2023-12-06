@@ -1,0 +1,59 @@
+package javaBasic2.ch05.sec03;
+//p168
+public class ArraycreateByValueListExample {
+
+	public static void main(String[] args) {
+	//배열 변수 선언과 배열생성
+	String[] season = {"Spring" ,"Summer", "Fall", "Winter"};
+
+	
+	//배열의 항목값 읽기
+	System.out.println("seson[0]:"+ season[0]);
+	System.out.println("seson[1]:"+ season[1]);
+	System.out.println("seson[2]:"+ season[2]);
+	System.out.println("seson[3]:"+ season[3]);
+	
+	//인덱스 1번 항목의 값 변경
+	season[1] = "여름";
+	System.out.println("season[1]"+ season[1]);
+	System.out.println();
+	
+	//배열 변수 선언과 배열 생성
+	int [] score = {83,90,87};
+	
+	//총합과 평균 구하기 
+	int sum1 = 0;
+	for(int i=0; i<3; i++ ) {
+		sum1 += scores[i];
+	}
+	System.out.println("총합:":" "+ sum1);
+	double avg1 = (double) sum1 /3;
+	System.out.println("평균:"+avg1);
+	
+	
+	
+	// name. length =25;
+	
+	//성정표 만들기
+	//	이름 점수
+	//	홍길동 100
+	//	김수진 90
+	//	이경주 85
+	
+	// 1차원 배열 만들어서 출력해 보세요.
+	String[] name2 = {"홍길동","김수진", "이경주"};
+	int[] score2 = {100,90,85};
+	
+	for(int i=0; i < name2.length; i++) {
+		System.out.println(name2[i]+"  "+score2[i]);
+	}
+		
+	//자동차 판매현황을 배열에 넣어서 출력하기
+	String[] carname = {"싼타페","코란도"};
+	int[] score
+		
+		
+		
+	}
+
+}

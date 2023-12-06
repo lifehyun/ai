@@ -1,0 +1,17 @@
+package javaBasic.ch02.sec09;
+
+public class operationPromotionExample {
+
+	public static void main(String[] args) {
+		byte result1 = 10 + 20;
+
+    System.out.println(result1:"  "+result1);
+  
+	}
+
+	byte v3 = 10;
+	int  v2 = 20;
+	
+		
+
+}

@@ -1,0 +1,26 @@
+package javaBasic.ch03.sec02;
+
+import java.util.Scanner;
+
+public class 산술연산자 {
+
+	public static vold main(String[]args) {
+	
+			Scanner sc = new Scanner(System.in); //키보드로 글자 입력하는 클래스
+			int kor = sc.nextInt();
+			System.out.println(kor);
+			
+			
+			double rate =sc.nextDouble();
+			System.out.println(rate);
+			
+			//true입력하여 출력하고 싶을시
+			boolean ox = sc.nextBoolean();
+			System.out.println(ox);
+			
+			//홍길동이라고 이름을 입력하고 싶을때
+			String "홍길동" =sc.toString();
+			System.out.println("홍길동");
+			
+	}
+}
