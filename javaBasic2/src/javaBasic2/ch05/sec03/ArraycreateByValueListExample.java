@@ -50,18 +50,17 @@ public class ArraycreateByValueListExample {
 	}
 		
 
-	//자동차 판매현황을 배열에 넣어서 출력하기
-	String[] carName = {"싼타페","코란도"};
-	int [] totalvehicleAmount = {35000000,24000000};
-	int [] deliveryMoney = {15000000,5000000};
-	int [] installMent = {20000000,19000000};
-	int [] situationPeriod = {36,24};
-	int [] monthlyPayment = {55555556,79166667};
-	
-	for(int i=0; i<carName.length ; i++) {
-		System.out.println("totalvehicleAmount"[i]+"  "+"deliveryMoney"[i]+"  "+"installMent"[i]+"  "+"situationPeriod"[i]+"  "+"monthlyPayment"[i]);
-	}
-	
+//	//자동차 판매현황을 배열에 넣어서 출력하기
+//	String[] carName = {"싼타페","코란도"};
+//	int [] totalvehicleAmount = {35000000,24000000};
+//	int [] deliveryMoney = {15000000,5000000};
+//	int [] installMent = {20000000,19000000};
+//	int [] situationPeriod = {36,24};
+//	int [] monthlyPayment = {55555556,79166667};
+//	
+//	for(int i=0; i<carName.length ; i++) {
+//		System.out.println("totalvehicleAmount"[i]+"  "+"deliveryMoney"[i]+"  "+"installMent"[i]+"  "+"situationPeriod"[i]+"  "+"monthlyPayment"[i]);
+//	}
 	
 	
 	
@@ -87,7 +86,7 @@ public class ArraycreateByValueListExample {
 	System.out.println("월상환액합계는" + 월상환액합계);
 	
 	
-	// 부서정보에 대한것을 배열에 넣어서 출력하기
+	// 부서정보에 대한것을 배열에 넣어서 출력하기//0열 , 1열 , 2열,3열
 	String[] 사번 = {"J0001","J0003","J0008","J0009"};
 	String[] 이름 = {"홍길동","이도현","한미우","박정진"};
 	String[] 부서 = {"총무부","영업부","인사부","영업부"};
