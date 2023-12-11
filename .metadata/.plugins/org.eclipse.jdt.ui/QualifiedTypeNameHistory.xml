@@ -2,6 +2,16 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="javaBasic3.ch06.sec03.ClassName250"/>
+    <fullyQualifiedTypeName name="javaBasic3.ch06.sec04.AA"/>
+    <fullyQualifiedTypeName name="javaBasic3.ch06.sec05.SingletonExample"/>
+    <fullyQualifiedTypeName name="javaBasic3.ch06.sec05.Singleton"/>
+    <fullyQualifiedTypeName name="javaBasic3.ch06.sec07.MemberService"/>
+    <fullyQualifiedTypeName name="javaBasic3.ch06.sec07.MemberServices"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="javaBasic3.ch06.sec07.ShopService"/>
+    <fullyQualifiedTypeName name="javaBasic3.ch06.sec07.whilte"/>
 </qualifiedTypeNameHistroy>
