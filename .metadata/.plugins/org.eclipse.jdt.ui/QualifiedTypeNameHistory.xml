@@ -10,8 +10,15 @@
     <fullyQualifiedTypeName name="javaBasic3.ch06.sec05.Singleton"/>
     <fullyQualifiedTypeName name="javaBasic3.ch06.sec07.MemberService"/>
     <fullyQualifiedTypeName name="javaBasic3.ch06.sec07.MemberServices"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="javaBasic3.ch06.sec07.ShopService"/>
     <fullyQualifiedTypeName name="javaBasic3.ch06.sec07.whilte"/>
+    <fullyQualifiedTypeName name="javaBasic3.ch06.sec09.SportCarMain"/>
+    <fullyQualifiedTypeName name="javaBasic3.ch06.sec11.CalculatorExample"/>
+    <fullyQualifiedTypeName name="javaBasic3.ch06.sec02.calculator"/>
+    <fullyQualifiedTypeName name="javaBasic3.ch06.sec11.Calculator"/>
+    <fullyQualifiedTypeName name="javaBasic3.ch06.sec11.Television"/>
+    <fullyQualifiedTypeName name="javaBasic3.ch06.sec11.BankApplication"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="javaBasic3.ch06.sec11.Account"/>
 </qualifiedTypeNameHistroy>
