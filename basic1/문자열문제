@@ -1,0 +1,152 @@
+#1번 앞에서0~9 뒤에서 - 09~01
+letters = 'java programming'
+print(letters[5],letters[1],letters[-2])
+
+#2번 43다 6521 뒤에 4자 6521출력하라
+carNumber = '43다 6521'
+print(carNumber[-4:8]) 
+print(carNumber[0:3]) #43다까지
+
+#3번 홀짝홀짝홀짝홀짝에서 짝만 출력하라
+String = '홀짝!홀짝!홀짝!홀짝!'
+print(String[0:12:3])#시작인덱스 : 종료인덱스 :증가인덱스
+print(String[1:12:3]) #홀만 출력
+print(String[2:12:3]) #!표만 출력
+
+#4번 PYTHON 뒤집어서 출력하라
+# String [시작인덱스 생략하면 0 : 종료인덱스 생략하면 마지막: 증가인덱스]
+String = "PYTHON"
+print(String[5],String[4],String[3],String[2],String[1])
+print(String[::-1])
+
+#치열하기 
+# String[1]=k       y를 k로 바꾼다 
+String = String.replace("Y","K")
+print(String)
+print(String.replace("N","K"))
+#a --> A로 바꿔라
+String = 'abcdef'
+print(String.replace('a','A'))
+
+
+#5번 -를 없애고 출력하세요
+phone_number = "010-8787-9999"
+print(phone_number.replace("-"," "))
+
+#6번  0108889999  -를 없애고 출력하세요
+phone_number = '010-888-9999'
+phone_number = phone_number.replace("-","")
+print(phone_number)
+
+#7번 url에 저장된 웹주소에서 com만 출력합니다
+url = "http://www.naver.com"
+url = url.split(".")
+print(url[1])
+
+
+#8번,9번 lang[0] = "k" 문자열에서 부분적으로 수정하기 - 에러 확인하기
+lang = "java python"
+lang = lang.replace("j","k")
+print(lang)
+
+#10번 ,11번
+string = "abcdefABCDEFabc"
+string = string.replace("c", "!")
+print(String.replace)
+
+#12번
+a="123"
+b="456"
+print(a+b)
+print(a,b)
+
+#13번 hi가 5번 나오게 하라
+a = 'Hi'*5
+print(a)
+
+#14번  "+"기호를 150번 나오게 하기
+b = "+" * 150
+print(b)
+
+#15번 문자열 더하기와 곱하기 이용하여 아래와 같이 출력하기
+s1 = "python"
+s2 = "c++"
+s3 = "java"
+s4 = s1+" "+s2+" "+s3  
+print(s4*6)
+
+#16번 
+name1 ='홍길동'
+age1 = 25
+eyesight1 = 1.2
+name2 = '이순신'
+age2 = 13
+eyesight2 = 0.8
+
+# %s 문자형  %d 정수형  %f 실수형
+print('이름: %s 나이: %d 시력: %.1f '% (name1, age1, eyesight1)) 
+print('이름: %s 나이: %d 시력: %.1f '% (name2, age2, eyesight2)) 
+
+#17번 .format()함수사용 #%자리에 {}중괄호가 대신들어감
+print('이름: {} 나이: {} 시력: {}'.format(name1,age1,eyesight1))
+print('이름: {} 나이: {} 시력: {}'.format(name2,age2,eyesight2))
+
+#18번 ★ f-String을 사용하라 ★
+print(f'이름:{name1} 나이:{age1} 시력:{eyesight1}')
+print(f'이름:{name2} 나이:{age2} 시력:{eyesight2}')
+
+
+#19번 컴마를 제거하기
+total = "5,896,124,650"
+total = total.replace(",","")
+print(total)
+
+# 컴마제거후 정수형으로 바꿔주기.
+total = (int)(total)
+print(total+100)
+
+#20번 2024/01만 출력하세요
+날짜 = '2024/01(E) 1사분기'
+print(날짜[0:7])
+print(f'{날짜}')
+print(날짜)
+
+#(기점으로 자르는것
+날짜 = '2024/01(E)1사분기'
+날짜 = 날짜.split('(') 
+print(날짜[0])
+
+#21번 좌우의 공백을 제거해보세요
+data = "      공백제거하기   "
+data = data.strip()
+print(f'공백제거한값은 {data}')
+
+#22번 소문자로 된 문자열을 대문자로 바꿔 보세요.
+lowerWord = "python is very good"
+print(lowerWord.upper())
+
+upperWord = 'java language'
+print(upperWord.upper())
+
+capitalizeWord = 'python quiz'
+print(capitalizeWord.upper())
+
+#23번 대문자로 된 문자열을 소문자로 바꿔 보세요.
+lowerWord = "python is very good"
+print(lowerWord.lower())
+
+upperWord = 'java language'
+print(upperWord.lower())
+
+capitalizeWord = 'python quiz'
+print(capitalizeWord.lower())
+
+#25번 아래의 파일명이 'csv'로 끝 나면 True로 출력하고 아니면 False라고 출력하세요
+fileName="abc.csv"
+print(fileName.endswith("csv"))
+
+if(fileName.endswith("csv")):
+    print("엑셀파일입니다")
+    
+fileName="abc.csv"
+(fileName.endswith("csv"or"xlsx"))
