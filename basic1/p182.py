@@ -1,4 +1,4 @@
-# p182 리스트
+# ★p182 리스트★
 # 순서있게 [요소, 요소 , 요소] 
 # 수정 할수있다. : 삽입,수정,삭제
 # 일기전용 : 파일열기만 가능
@@ -16,7 +16,7 @@ print(list1)
 #type()자료형이 어떤건지 보기
 print(type(list1))      
 
-# 리스트를 만드는 방법
+# ★리스트를 만드는 방법★
 # 방법1)변수 = [요소1,요소2]
 # 방법2)list() 함수를 사용하기    
  
@@ -24,7 +24,7 @@ list2 = list(range(1,21,2))
 print(list2)
 print(type(list2))
 
-list3 = list("abcdef")
+list3 = list("abcdef") # ['a'b'c'd'e'f']
 print(list3)
 print(type(list3))
 
@@ -50,11 +50,11 @@ list6 = (color[1],color[4],color[6])
 print(list6) ; print(type(list6))
 
 # 반복문과 리스트 
-# for i in color :
+# for i in color : 
 #     변수        리스트 color = ["빨강","주황","노랑","초록","파랑","남색","보라"]
 
-for i in color :
-    # print(i , end= "")
+for i in color :  
+    # print(i , end= "") 
     print("나는 %s를 좋아합니다"%i)
 #len이라는 인덱스를 세어주는 함수이다 
 print(len(color))  
