@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javaBasic3.ch06.sec07.MemberService"/>
-    <fullyQualifiedTypeName name="javaBasic3.ch06.sec07.MemberServices"/>
-    <fullyQualifiedTypeName name="javaBasic3.ch06.sec07.ShopService"/>
-    <fullyQualifiedTypeName name="javaBasic3.ch06.sec07.whilte"/>
-    <fullyQualifiedTypeName name="javaBasic3.ch06.sec09.SportCarMain"/>
-    <fullyQualifiedTypeName name="javaBasic3.ch06.sec11.CalculatorExample"/>
-    <fullyQualifiedTypeName name="javaBasic3.ch06.sec02.calculator"/>
     <fullyQualifiedTypeName name="javaBasic3.ch06.sec11.Calculator"/>
     <fullyQualifiedTypeName name="javaBasic3.ch06.sec11.Television"/>
     <fullyQualifiedTypeName name="javaBasic3.ch06.sec11.BankApplication"/>
@@ -42,14 +35,11 @@
     <fullyQualifiedTypeName name="javaBasic6.ch09.sec07.exam01.Tire"/>
     <fullyQualifiedTypeName name="javaBasic6.ch09.sec07.exam02.RemoteControl"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
-    <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
     <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
-    <fullyQualifiedTypeName name="java.text.DateFormat"/>
-    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
     <fullyQualifiedTypeName name="java.lang.module.ModuleDescriptor.Modifier"/>
     <fullyQualifiedTypeName name="java.lang.module.ModuleDescriptor"/>
     <fullyQualifiedTypeName name="java.lang.module.ModuleDescriptor.Opens"/>
@@ -57,7 +47,17 @@
     <fullyQualifiedTypeName name="javaBasic7.ch12.sec01.Student"/>
     <fullyQualifiedTypeName name="javaBasic7.ch12.sec01.Netplex"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
     <fullyQualifiedTypeName name="javaBasic7.ch12.sec01.Exnew"/>
+    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="java.util.TimeZone"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="java.text.DateFormat"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
 </qualifiedTypeNameHistroy>
