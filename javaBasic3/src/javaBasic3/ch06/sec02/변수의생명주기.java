@@ -11,7 +11,6 @@ public class 변수의생명주기 {
 	//System.out.println(c);
 		
 		for(int i=0; i<10; i++) { //for변수의 메소드 : for에서만 사용할수있다.
-			int j
 			System.out.println(i);
 		}
 	//System.out.println(i); //for변수의 메소드 밖이라 사용불가

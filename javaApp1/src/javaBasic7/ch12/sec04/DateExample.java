@@ -8,7 +8,7 @@ public class DateExample {
 	public static void main(String[] args) {
 
 		
-		Date now = new Date();
+		Date now = new Date(0);
 		String strNow1 = now.toString();
 		System.out.println(strNow1);
 		

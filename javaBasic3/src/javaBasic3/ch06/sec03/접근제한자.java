@@ -8,7 +8,7 @@ public class 접근제한자 {
 
 	public static void main(String[] args) {
 	
-	singleton o1 = singleton.getinstance();	
+	singleton o1 = singleton.getInstance();	
 	System.out.println(o1);
 		
 	A aAdd = new A(); //객체화하기

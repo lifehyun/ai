@@ -35,7 +35,7 @@ public class 참조타입 {
 	
 	//Guide 클래스를 만들고 힙메모리 올려주세요.
 	
-	Gudie guide = new Gudie();
+	Guide guide = new Guide();
 	
 	
 		

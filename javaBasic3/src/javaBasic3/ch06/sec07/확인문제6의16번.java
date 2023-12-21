@@ -6,7 +6,7 @@ public class 확인문제6의16번 {
 		
 		
 		Printer printer = new Printer();	//Printer 클래스를 객체에 생성한다.
-	
+		printer1 printer1 = new printer1();
 		
 		printer.println(10); 	//메소드호출 void 창조변수명.메소드
 		printer.println(true);
