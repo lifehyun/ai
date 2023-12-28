@@ -123,28 +123,41 @@ print("튜플의 합계: %d"%(ss))
 
 #p291 
 #심화문제 7-1
-n = int(input("n값을 입력해 주세요:"))
-def decimal(n1) :
-    de = []
-    for i in range(2,n1,1):
-        for j in range(2,n1,1):
-            if i % j == 0  and i % i == 0 :
-                de.append(i)
-                break
-decimal(n)
+# n = int(input("n값을 입력해 주세요:")) # 50
+# def decimal(n1) :
+#     de = []
+#     for i in range(2,n1,1):         # 2 3 4 5
+#         x = True
+#         for j in range(2,i,1):     # 1 , 2,  2 3  , 2 3 4 5
+#             if i % j == 0 :        # 2 % 2 == 0 
+#                 x = False
+#                 break
+#         if x : 
+#             print(i)
+# decimal(n) 
 
 
 #심화문제 7-2
-eng_dict = {"house":"집", "piano":"피아노", "christmas":"크리스마스","friend":"친구","bread":"빵"}
-def engQuiz( eng_dict):
-    for i in eng_dict : # i변수에 키값들이 담긴다.
-        answer = input(f"{eng_dict[i]}에 맞는 영어단어는?") #dict에 key값을 넣어주면 value가 나온다.
-        if answer == i : 
-            print("참잘했어요!^_^")
-        else :
-            print("틀렸어요!ㅜㅡㅜ")
+# eng_dict = {"house":"집", "piano":"피아노", "christmas":"크리스마스","friend":"친구","bread":"빵"}
+# def engQuiz( eng_dict):
+#     for i in eng_dict : # i변수에 키값들이 담긴다.
+#         answer = input(f"{eng_dict[i]}에 맞는 영어단어는?") #dict에 key값을 넣어주면 value가 나온다.
+#         if answer == i : 
+#             print("참잘했어요!^_^")
+#         else :
+#             print("틀렸어요!ㅜㅡㅜ")
 
-engQuiz(eng_dict)
+# engQuiz(eng_dict)
 
 
+#심화문제 7-3
+n = int(input("n 값을 입력하세요:"))
 
+def nMul(n) :
+    result = []
+    for i in range(1,n+1): # 1~10
+        result.append(i*i)
+    return result
+
+resultList = nMul(n)
+print(resultList)
