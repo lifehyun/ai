@@ -16,7 +16,7 @@ public class LamdaEx01 {
 		//람다식
 //		A a1 = (int c , double d)-> {return (int)(c+d);};
 //		A a1 = (c, d)->{return (int)(c+d);}; //매개변수의 자료형을 생략할수 있다.
-		A a1 = (c , d)-> (int)(c+d);		//{} 안에 문장이 1개이니까 생략,return 가능하다.
+		A a1 = (c , d)-> (int)(c+d);		//{} 안에 문장이 1개이고 , return값을  생략 가능하다.
 		System.out.println(a1.aM(20, 3.8));
 				
 		B b1 = (x,y,z)->{
