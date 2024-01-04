@@ -85,7 +85,7 @@ SELECT * FROM emp WHERE ename like '이%' OR ename like '오%';
 SELECT * FROM emp WHERE not ename like '이%';
 SELECT * FROM emp WHERE ename not like '이%';
 
---이름 중간 글씨가 동인 사람
+--이름 중간 글씨가 '동'자가 들어가는 사람
 SELECT * FROM emp WHERE ename like '%동%';
 
 --이름 마지막 글씨가 기인 사람
@@ -183,3 +183,7 @@ SELECT * FROM emp WHERE mgr is null;
 
 --부서번호가 빠른 사원부터 출력하되 같은 부서 내의 사원을 출력할 경우 입사한 지 가장 오래된 사원부터 출력하기
 SELECT * FROM emp ORDER BY deptno,hiredate;
+
+SELECT * FROM emp WHERE job in('과장','부장') ORDER BY job ;
+--처리순서 
+-- 3       1      2(조건)                     4
