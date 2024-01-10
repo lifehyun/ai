@@ -157,17 +157,72 @@ use employees;
 select * from employees.employees;
 --			  데이터베이스명. 테이블명
 
+-- sqldb 를 사용하러가기
 use sqldb;
+select * from buytbl;
+
+drop table if exists testtbl4 ; 
+select * from buytbl ;
+-- 요구사항 : 상품명, 가격 테이블 만들기
+-- 1단계 테이블 만들기
+create table if not exists testtbl4 
+  ( prodName varchar(40) not null,
+    price int not null ) ;
+-- 2단계 삽입한다.
+select distinct prodName, price from buytbl ;
+
+insert into testtbl4  
+       select distinct prodName, price from buytbl ;
+
+select * from testtbl4 order by price desc ;
+
+-- 청바지 가격을 100으로 수정하기
+update testtbl4 set price = 100 where prodName = '청바지' ;
+-- 가장 높은 가격인 것을 찾아서 10% 인하하기
+-- 1단계 가장 높은 가격 것 찾기
+select price from testtbl4 order by price desc limit 0, 1;
+-- 2단계 10% 인하하기  **** with문으로 사용하기 
+-- update시에 동일한 테이블을 서브쿼리 사용하여 update 할 수 없다. 
+-- 오류 
+update testtbl4  set price = price - price * 0.1 
+   where price =
+   ( select price from ( select price from testtbl4 order by price desc limit 1 ) as t );
+
+update testtbl4  set price = price - price * 0.1 
+ where  price = 
+   ( select price from ( select price from testtbl4 order by price desc limit 0, 1 ) as t  ); 
+
+select * from testtbl4;
+
+
+-- delete문 
+select * from buytbl;
+-- copyBuy 테이블 복사해서 만들기 
+create table if not exists copyBuy
+   select * from buytbl;
+select * from copyBuy;
+
+-- copyBuy amount가 제일 작은 것 찾아서 삭제하기
+-- 1단계 amount가 제일 작은 것 찾기
+select amount from copyBuy  order by amount asc limit 1;
+-- 2단계 삭제하기
+delete from copyBuy  
+where 
+amount = (  select amount from 
+               ( select amount from copyBuy  order by amount asc limit 1 ) as t );
+
+select * from copyBuy ;
+
+
 
 -- insert문인데 select문을 이용하여 삽입하기
 -- values:  1001 2004-01-09	김	성수	M	2024-01-09 
-create table testTbl4 (id int ,fname varchar(50), lname varchar(50));
+create table testTbl5 (id int ,fname varchar(50), lname varchar(50));
 select  emp_no , first_name , last_name from employees.employees ;
 
-insert into testTbl4 
+insert into testTbl5 
 	select  emp_no , first_name , last_name from employees.employees ;
-    
-select * from testtbl4;
+select * from testtbl5;
 
 create table copyBuyTbl ( select * from buyTbl);
 -- 가격이 상위권 3개인걸 출력하기
