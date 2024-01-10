@@ -53,14 +53,14 @@ header {
 }
 header h1 {
   position: absolute;
-  left: 0;
+  left: 0px;
   top: 0px;
   padding: 0 0 0 26px;
 }
 header h1 a {
   display: block;
   width: 125px; /*가로*/
-  height: 35px; /*세로*/
+  height: 34px; /*세로*/
   background: url(../image/logo.png);
 }
 .hide {
@@ -100,7 +100,9 @@ header .util a {
   color: #000;
 }
 header .util button {
-  width: 27px;
-  height: 35px;
-  background: url(../image/search.png) no-repeat;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  background: url(../image/search.png) no-repeat center;
+  background-size: cover;
 }
