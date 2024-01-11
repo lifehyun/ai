@@ -48,8 +48,8 @@ body {
 header {
   /* 상대적인 위치를 잡는것 */
   position: relative;
-  border-top: 42px solid #5aaedb;
-  border-bottom: 2px solid #5aaedb;
+  border-top: 40px solid #5aaedb;
+  border-bottom: 1px solid #5aaedb;
 }
 header h1 {
   position: absolute;
@@ -105,4 +105,42 @@ header .util button {
   height: 26px;
   background: url(../image/search.png) no-repeat center;
   background-size: cover;
+}
+#blank {
+  height: 50px;
+}
+/* 표의 전체 크기 */
+/* 브라우저 전체 크기로 하고 싶을때  100%*/
+table {
+  width: 600px; /* 가로 */
+  height: 300px; /* 세로*/
+  margin-left: auto; /* 표 자체를 가운데로 정렬 */
+  margin-right: auto;
+  text-align: center; /* 표 전체글을 가운데로 정렬*/
+}
+th,
+td {
+  border-bottom: 1px solid #5aaedb;
+  border-left: 1px solid #5aaedb;
+}
+/* 셀의 크기 */
+.c1 {
+  width: 100px;
+  height: 70px;
+  vertical-align: middle; /* 수직 글자 정렬 */
+  text-align: center; /* 수평 글자 정렬*/
+  border-collapse: collapse;
+  padding: 2px;
+}
+.c2 {
+  width: 300px;
+  height: 70px;
+}
+.c3 {
+  width: 200px;
+  height: 70px;
+}
+.c4 {
+  width: 100px;
+  height: 70px;
 }
