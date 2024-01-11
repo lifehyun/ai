@@ -163,8 +163,8 @@ create table movietbl
    
    insert into movietbl 
    values ( 1 , '쉰들러리스트','스필버그','리암니슨',
-			load_file('D:\AI\Temp\movies\Schindler.txt'),
-            load_file('D:\AI\Temp\movies\Schindler.mp4')
+			load_file('D:/AI/Temp/movies/Schindler.txt'),
+            load_file('D:/AI/Temp/movies/Schindler.mp4')
             );
 
 select * from movietbl;
@@ -172,3 +172,12 @@ select * from movietbl;
 -- null이 출력된 이유 : movie_ script , film은 용량이 커서 안올라간다 
 show variables like 'max_allowed_packet'; -- 저장할수있는 패킷의 크기를 볼수 있다.
 show variables like 'secure_file_priv';	  -- mysql이 지정한 업로드 경로를 볼수 있다.
+
+ truncate movietbl;
+ insert into movietbl values (1, '쉰들러 리스트', '스필버그','리암니슨', load_file('D:/AI/Temp/movies/Schindler.txt'),
+ load_file('D:/AI/Temp/movies/Schindler.mp4') );
+
+ use movi
+edb;
+ select * from movietbl;
+
