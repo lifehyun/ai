@@ -32,7 +32,7 @@ select userid, prodName ,groupName from buytbl
 -- 김범수가 산 물건은 무엇인가요?
 -- 김범수의 user_id를 구한다.
 select prodName, userid from buytbl where userid = (select userid from usertbl where name = '김범수');
-
+
 select * from usertbl;
 -- 주소가 서울사람인 검색하기
 select addr  from usertbl where addr = '서울';
@@ -133,8 +133,8 @@ insert into testTbl2 (userName,age) values ('유경',21);
 select * from testTbl2;
 
 -- 시작수가  100부터 입력하고 싶을때
-alter table testTb14 auto_increment=100;
-insert into testTbl4 values(null , '지수',25);
+alter table testTb15 auto_increment=100;
+insert into testTbl5 values(null , '지수',25);
 
 -- 학번이  240101 시작하기
 create table if not exists testTbl3
