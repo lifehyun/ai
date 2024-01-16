@@ -349,5 +349,175 @@ create table backup_userTbl
  update usertbl set addr = '서울' where userid = 'EJW';
  
 select * from backup_usertbl;
-  
+
+-- 트리거 작성하기
+delimiter //
+create trigger  but  -- 언제할래? update 후에  무엇을 할래? usertbl의 모든 행을  
+   after update 
+   on usertbl 
+   for each row 
+ begin -- 어떻게 ? 내용 
+    insert into backup_userTbl  
+    values ( OLD.userID, OLD.name, OLD.birthYear, old.addr, 
+             old.mobile1, old.mobile2, old.height, old.mDate,
+             '수정', curdate(), current_user() 
+             ) ;
+ end //
+delimiter ; 
+
+select * from usertbl ;
+
+update usertbl set birthYear = 1977 where userId='BBK' ;
+update usertbl set addr = '서울' where userId='EJW' ;
+
+update usertbl set addr = '경기' where userId='JKW' ;
+select * from backup_userTbl ;
+
+-- 467
+-- 삭제가 발생했을 때 
+delimiter //
+ create trigger  bud  -- 언제 누구에게 
+    after  delete 
+    on usertbl 
+    for each row 
+ begin
+     insert into backup_userTbl 
+     values (
+               OLD.userID, OLD.name, OLD.birthYear, old.addr, 
+              old.mobile1, old.mobile2, old.height, old.mDate,
+              '삭제', curDate(), current_user()
+            );
+ end // 
+delimiter ; 
  
+select * from usertbl ;
+delete from usertbl  where userid = 'YJS' ; 
+
+select * from backup_userTbl ;
+
+-- 469쪽
+-- 삽입후에 경고 오류 발생시키고 경고 메세지 띄우기
+delimiter //
+ create trigger  utii -- 언제 누구에게 
+    after  insert
+    on usertbl 
+    for each row 
+ begin
+    signal sqlstate '45000' set message_text ='데이터의 입력을 시도했습니다. 귀하의 정보가 서버에 기록되었습니다.';
+ end // 
+delimiter ; 
+
+select * from usertbl;
+insert into usertbl values('ABC','에비씨', 1977, '서울','011','1111111',181,'2019-12-25','잠재고객' ); 
+
+-- before 트리거
+-- old 변경 되기 전에 자료 , new 변경되고 난 후 자료
+-- 요구사항 : 입력할 떄 생일 잘못 입력되지 않도록 1900이전 입력이면 0 입력 또는 올해 년도보다 이후의 년도 입력 되었을때 0으로 입력
+
+delimiter //
+create trigger ubi
+	before insert
+    on usertbl
+    for each row
+begin
+	if new.birthyear < 1900 then
+		set new.birthyear = 0;
+	elseif new.birthyear > year(curdate()) then
+		set new.birthyear = year(curdate());
+	end if;
+end //
+delimiter ;
+
+insert into usertbl values ( 'DDD', '디디디', 1877 , '서울','011' ,'111111',181,'2019-12-25' , '잠재고객');
+insert into usertbl values ( 'EEE', '이이이', 2877 , '서울','011' ,'111111',181,'2019-12-25' , '잠재고객');
+select * from usertbl;
+
+-- 주소가 '평양'으로 입력되면 '간첩' 
+-- 전화번호가 '999' 입력되면 '010' 바꿔서 입력하기
+delimiter //
+create trigger ubi2
+	before insert
+    on usertbl
+    for each row
+begin
+	if new.addr = '평양' then
+		set new.addr = '외국';
+	elseif new.mobile1 = '999' then
+		set new.mobile1 = '010';
+	end if;
+end //
+delimiter ;
+
+insert into usertbl values ( 'FFF', '에프에', 1877 , '평양','011' ,'111111',181,'2019-12-25' , '잠재고객');
+insert into usertbl values ( 'GGG', '지지지', 1877 , '평양','011' ,'111111',181,'2019-12-25' , '잠재고객');
+
+-- 생성된 트리거들을 확인하기 
+show triggers from sqldb;
+
+-- 다중 트리거 
+-- 조건 : 구매 1 물품테이블 -1  배송테이블 +1
+
+drop database if exists triggerDb;
+create database if not exists triggerDb;
+use triggerDb;
+
+-- 구매 테이블
+create table orderTbl
+( orderNo int auto_increment primary key,
+  userid varchar(5),
+  prodName varchar(5),
+  orderamount int);
+-- 물품 테이블
+create table prodTbl
+( prodName varchar(5),
+  account int );
+-- 배송 테이블
+create table deliverTbl
+( deliverNo int auto_increment primary key,
+  prodName varchar(5),
+  account int );
+-- 물품테이블에 물건 삽입하기
+insert into prodTbl values ('사과' , 100);
+insert into prodTbl values ('배' , 100);
+insert into prodTbl values ('귤' , 100);
+
+select * from prodTbl;
+
+-- 트리거 
+-- 구매테이블에 삽입되면 물품테이블에서 갯수만큼 차감해서 업데이트한다.
+delimiter //
+create trigger orderTg
+	after insert
+    on orderTbl  -- 구매 테이블에 삽입된 후에
+    for each row
+begin
+	update prodTbl set account = account - new.orderamount where prodName = new.prodName;
+end //
+delimiter ;
+
+-- 요구사항 물품테이블을 업데이트가 된후 배송테이블에 삽입하기 (5개)
+delimiter //
+create trigger prodTg
+	after update 
+    on prodTbl
+    for each row
+begin
+ declare orderAmount int; -- 변수변경
+ set orderAmount = OLD.account = new.account; -- 100 - 95 = 5
+ insert into delivertbl values( null , new.prodName, orderAmount); -- delivertbl 컬럼을 나열.
+end //
+delimiter ; 
+
+-- 구매테이블
+select * from ordertbl;
+desc ordertbl;
+insert into ordertbl values( null , 'BBK', '사과',5);
+
+show triggers;
+
+-- 잘들어갔는지 확인
+select * from delivertbl;
+select * from ordertbl;
+select * from prodtbl; 
+
+insert into ordertbl values( null , 'KBS' , '배' , 10); -- 배를 KBS가 주문한것
