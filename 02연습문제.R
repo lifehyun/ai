@@ -112,6 +112,30 @@ levels(f)
 as.integer(f)
 
 
+#추가문제 
+
+#1번 
+a <- 4
+b <- 5
+c <- a + b 
+c
+
+#2번
+y = 2 * 2 + 5*x3 + 10
+x1 <- 6
+x2 <- 8
+x3 <- 10
+
+#3번 
+val.a <- 10
+val.b <- 15
+sum.ab <- val.a + val.b
+
+#4번
+vc.1 <- c(95,86,47,55,68)
+vc.1
+
+
 help()
 rm()
 
