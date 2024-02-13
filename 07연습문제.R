@@ -84,7 +84,6 @@ dim(mt2)
 
 
 # 3번문제. R에서 제공하는 airquality 데이터셋에 대해 다음의 문제를 해결하기 위한 R 코드를 작성하시오.
- 
 # (1) airquality를 AQ에 저장하시오.
 AQ <- airquality
 head(AQ)
@@ -114,7 +113,7 @@ for (i in 1:ncol(AQ)) {
   cat(i,"행의 결측값의 갯수 :",cnt,"개 \n")
 } 
 # (4) AQ에서 NA를 포함하지 않은 행들만 출력하시오.
-AQ.NOTNA <- na.omit(AQ) 
+AQ.NOTNA <- na.omit(AQ) #제거하기
 AQ.NOTNA
 
 AQ.NOTNA2 <- AQ[complete.cases(AQ),]
@@ -132,7 +131,6 @@ head(AQ)
 
 
 # 4번문제. R에서 제공하는 state.x77 데이터셋에 대하여 다음 문제를 해결하기 위한 R 코드를 작성하시오.
- 
 # (1) state.x77 데이터셋을 Population(인구수)를 기준으로 오름차순 정렬하시오.
 class(state.x77) #자료형은 matrix
 order(state.x77[,'Population'])
@@ -146,7 +144,6 @@ head(temp , n=15)
 temp[1:10, 'Illiteracy']
 
 # 5번문제. R에서 제공하는 mtcars 데이터셋에 대하여 다음 문제를 해결하기 위한 R 코드를 작성하시오
-
 # (1) mtcars 데이터셋을 gear(기어)의 개수에 따라 그룹을 나누어 mt.gear에 저장하시오.(단, split() 함수를 사용하시오.)
 mt.gear <- split(mtcars,mtcars$gear)
 mt.gear
@@ -163,8 +160,8 @@ mt.gear.35
 # (4) mtcars 데이터셋에서 wt(중량)가 1.5~3.0 사이인 행들을 추출하여 출력하시오
 subset(mtcars ,wt >= 1.5 & wt<= 3.0)
 subset(iris,iris$Sepal.Length >7.6 , select = c(Sepal.Length,species))
-# 6번문제. mlbench 패키지에서 제공하는 Glass 데이터셋에 대해 다음의 문제를 해결하기 위한 R 코드를 작성하시오.
 
+# 6번문제. mlbench 패키지에서 제공하는 Glass 데이터셋에 대해 다음의 문제를 해결하기 위한 R 코드를 작성하시오.
 # (1) 다음과 같이 Glass 데이터셋을 myds에 저장하시오.
 library(mlbench)
 data("Glass")
@@ -173,19 +170,23 @@ myds <- Glass
 # (2) myds에서 Type 열의 값을 그룹으로 하여 RI, Na, Mg, Al, Si 열의 값들의 평균을 구하시오. (주의: 집계작업시 팩터타입의 컬럼은 제외해야 한다.)
 myds[RI,Na,Mg,Al,Si]
 
+
 # 7번문제. mlbench 패키지에서 제공하는 Ionosphere 데이터셋에 대해 다음의 문제를 해결하기 위한 R 코드를 작성하시오.
-
 # (1) 다음과 같이 Ionosphere 데이터셋을 myds에 저장하시오.
-
+install.packages('mlbench')
 library(mlbench)
 data("Ionosphere")
 myds <- Ionosphere
+myds
 
 # (2) myds에서 class 와 V1열의 값을 그룹으로 하여 V3~V10 열의 값들의 표준편차를 출력하시오. (주의: 집계 작업시 팩터 타입의 열은 제외해야 한다).
+head(myds)
 aggregate(myds[,3:10],by=list(구분=myds$Class,V1= myds$V1), FUN = sd)
+aggregate(myds[,3:10],by=list(V1=myds$V1, class=myds$Class), FUN = sd)
 
 # 8번문제. mtcars 데이터셋에서 10개의 행을 임의로 추출하여 mt10에 저장하고, 나머지 행들은 mt.other에 저장하시오. 그리고 mt10과 mt.other의 내용을 출력하시오.
-set.seed(100)
+set.seed(1:10)
+
 idx <- sample(1:nrow(mtcars),size = 10 , replace = F)
 idx
 mt10 <- mtcars[idx ,]#해당하는 열의 인덱스가 출력된다.
@@ -212,58 +213,69 @@ combn(fruit,3)
 
 # 13번문제. state.x77 데이터셋에서 Area(면적)가 Alabama 주보다 크고 California 주보다 작은 주의 이름과 Population(인구 수), Income(소득), Area(면적)를 출력하시오
 subset(state.x77, Area >=Alabama & Area>=Californai)
-# 14번문제. 다음 문제를 해결하기 위한 R 코드를 작성하시오.
 
+# 14번문제. 다음 문제를 해결하기 위한 R 코드를 작성하시오.
 # (1) 제공된 파일 중 subway.csv와 subway_latlong.csv 파일을 읽은 후 병합하여 subway.tot에 저장하시오(병합 기준 열은 STATION_CD와 station).
 subway <- read.csv( 'D:/AI/study/R_study/subway.csv', header = TRUE, fileEncoding = "CP949", encoding = "UTF-8")
 subway_latlong <- read.csv('D:/AI/study/R_study/subway_latlong.csv', header = TRUE, fileEncoding = "CP949", encoding = "UTF-8")
 subway.tot <- merge(subway,subway_latlong, by.x = c('station'), by.y = c('STATION_CD'),)
 subway.tot
-head(subway.tot)
+
 head(subway)
 head(subway_latlong)
+head(subway.tot)
+
 
 # (2) subway.tot에서 역 이름과 날짜를 기준으로 on_tot(탑승 인원)과 off_tot(하차 인원)을 집계(합계)하여 출력하시오.
 subname <- aggregate(subway.tot[, c('on_tot','off_tot')], by =list(역이름=subway.tot$stat_name, 날짜=subway.tot$income_date), FUN = sum )
 head(subname)
 tail(subname) 
 
-# (3) subway.tot에서 2011년도에 대해서만 역 이름을 기준으로 on_tot(탑승 인원)과 off_tot(하차 인원)을 집계(합계)하여 출력하시오.
-year.2011 <- subway.tot$income_date >= 201101 & subway.tot$income_date <= 20111231 
-year.2011
 
-subname.2011 <- aggregate(subway.tot[year.2011 ,c('on_tot','off_tot')],
-                     by=list(역이름=subway.tot$stat_name[year.2011]),
-                     FUN = sum)
-subname.2011
 
-head( subname.2011 )
-
+# (3) subway.tot에서 2011년도에 대해서만 역 이름을 기준으로 on_tot(탑승 인원)과 off_tot(하차 인원)을 집계(합계)하여 출력하시오. 
+# 1단계 2011년도만 추출
+condi <- subway.tot$income_date >= 20110101 & subway.tot$income_date <= 20111231
+# 2단계 집계함수
+aggregate( subway.tot[ condi,  c('on_tot', 'off_tot') ], 
+           by=list(역이름=subway.tot$stat_name[condi]), 
+           FUN=sum
+)
 # (4) subway.tot에서 2011년도에 대해서 LINE_NUM(호선)별 on_tot(탑승 인원)과 off_
-
 # tot(하차 인원)을 집계(합계)하여 출력하시오.
+aggregate( subway.tot[ condi, c('on_tot', 'off_tot') ], 
+           by=list(호선별=subway.tot$LINE_NUM[condi]),
+           FUN=sum
+)
+
 
 # 15번문제. 다음의 문제를 해결하기 위한 R코드를 작성하시오.
-
 # (1) 다음과 같이 데이터프레임 authors와 books를 생성하고 authors와 books의 내용을 출력하시오.
+  authors <- data.frame(
+   surname = c("Twein", "Venables", "Tierney", "Ripley", "McNeil"),
+   nationality = c("US", "Australia", "US", "UK", "Australia"),
+   retired = c("yes", rep("no", 4)))
 
-# authors <- data.frame(
-#   surname = c("Twein", "Venables", "Tierney", "Ripley", "McNeil"),
-#   nationality = c("US", "Australia", "US", "UK", "Australia"),
-#   retired = c("yes", rep("no", 4)))
-# books <- data.frame(
-#   name = c("Johns", "Venables", "Tierney", "Ripley", "Ripley", "McNeil"),
-#   title = c("Exploratory Data Analysis",
-#             "Modern Applied Statistics ...",
-#             "LISP-STAT",
-#             "Spatial Statistics", "Stochastic Simulation",
-#             "Interactive Data Analysis"),
-#   other.author = c(NA, "Ripley", NA, NA, NA, NA))
+  books <- data.frame(
+   name = c("Johns", "Venables", "Tierney", "Ripley", "Ripley", "McNeil"),
+   title = c("Exploratory Data Analysis",
+             "Modern Applied Statistics ...",
+             "LISP-STAT",
+             "Spatial Statistics", "Stochastic Simulation",
+             "Interactive Data Analysis"),
+   other.author = c(NA, "Ripley", NA, NA, NA, NA))
+
+authors
+books
 
 # (2) surname과 name을 공통 열로 하여 authors와 books를 병합하여 출력하시오(두 데이터프레임에서 공통 열의 값이 일치하는 것들만 병합).
+ merge(authors,books,by.x = c('surname') ,by.y = c('name'))
 
 # (3) surname과 name을 공통 열로 하여 authors와 books를 병합하여 출력하되 authors의 행들이 모두 표시되도록 하시오.
+ merge(authors,books,by.x = c('surname') ,by.y = c('name'),all.x = T)
 
 # (4) surname과 name을 공통 열로 하여 authors와 books를 병합하여 출력하되 books의 행들은 모두 표시되도록 하시오.
-
+ merge(authors,books,by.x = c('surname') ,by.y = c('name'),all.y = T)
 # (5) surname과 other.author를 공통 열로 하여 authors와 books를 병합하여 출력하시오.
+ merge(authors,books,by.x = c('surname') ,by.y = c('other,author'),c(all.x = T,all.y = T))
+ 
