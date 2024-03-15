@@ -1,0 +1,12 @@
+*.text
+*.txt
+*.exe
+*.zip
+*.jpg
+*.png
+*.h5
+*.cfg
+*.weights
+
+
+datasets/
