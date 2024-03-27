@@ -1,0 +1,25 @@
+package com.shop.entity;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@Table(name = "cart_id")
+public class CartItem {
+	
+	
+	@Id
+	@GeneratedValue
+	@Column(name = "cart_item_id")
+	private Long id;
+	
+	private Cart cart;
+	
+	private Item item;
+	
+	private int count; //같은 상품을 장바구니에 몇개 담을지 저장
+
+}

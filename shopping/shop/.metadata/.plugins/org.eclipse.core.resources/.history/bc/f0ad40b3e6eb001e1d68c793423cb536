@@ -1,0 +1,40 @@
+package com.shop.entity;
+
+import java.time.LocalDateTime;
+
+import com.shop.constant.OrderStatus;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Table(name = "orders")
+@Getter
+@Setter
+public class Order {
+
+	//상품주문할때 필요한 메소드 만들기
+	
+	@Id
+	@Column(name = "order_id")
+	private Long id;
+	
+	//주문과 멤버에서의 관계
+	//멤버하나가 여러개를 주문
+	@ManyToOne
+	@JoinColumn( name="member_id" )
+	private Member member;
+	
+	
+	private LocalDateTime orderDate; //주문일
+	private OrderStatus orderstatus; //주문상태 (public enum OrderStatus)에서 받아오는것:ORDER , CANCLE인지
+	private LocalDateTime regTime; //배송기간
+	private LocalDateTime updaDateTime; //수정일
+	
+}
